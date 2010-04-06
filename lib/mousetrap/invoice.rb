@@ -4,7 +4,8 @@ module Mousetrap
       :id,
       :number,
       :billing_date,
-      :created_at
+      :created_at,
+      :amount
 
     def initialize(hash = {})
       super(self.class.attributes_from_api(hash))
@@ -25,7 +26,8 @@ module Mousetrap
         :id           => id,
         :number       => number,
         :billing_date => billing_date,
-        :created_at   => created_at
+        :created_at   => created_at,
+        :amount       => amount
       }
     end
 
@@ -34,7 +36,8 @@ module Mousetrap
         :id           => attributes['id'],
         :number       => attributes['number'],
         :billing_date => attributes['billingDatetime'],
-        :created_at   => attributes['createdDatetime']
+        :created_at   => attributes['createdDatetime'],
+        :amount       => attributes['charges']['charge'].inject(0.0) {|sum, c| sum.to_f + c['eachAmount'].to_f}
       }
     end
   end
