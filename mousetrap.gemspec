@@ -4,8 +4,8 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{mousetrap}
-  s.version = "0.5.0"
+  s.name = %q{madebyrocket-mousetrap}
+  s.version = "0.5.3.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jon Larkowski", "Sandro Turriate", "Wolfram Arnold", "Corey Grusden"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/mousetrap.rb",
      "lib/mousetrap/customer.rb",
+     "lib/mousetrap/invoice.rb",
      "lib/mousetrap/plan.rb",
      "lib/mousetrap/resource.rb",
      "lib/mousetrap/subscription.rb",
