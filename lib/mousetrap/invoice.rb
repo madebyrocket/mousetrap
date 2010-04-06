@@ -37,7 +37,7 @@ module Mousetrap
         :number       => attributes['number'],
         :billing_date => attributes['billingDatetime'],
         :created_at   => attributes['createdDatetime'],
-        :amount       => attributes['charges']['charge'].inject(0.0) {|sum, c| sum.to_f + c['eachAmount'].to_f}
+        :amount       => attributes['charges']['charge'].class == Array ? attributes['charges']['charge'].inject(0.0) {|sum, c| sum.to_f + (c['eachAmount'].to_f * c['quantity'].to_i)} : attributes['charges']['charge']['eachAmount'].to_f  * attributes['charges']['charge']['quantity'].to_i
       }
     end
   end
