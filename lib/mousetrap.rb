@@ -8,6 +8,7 @@ module Mousetrap
 
   autoload :Customer,     'mousetrap/customer'
   autoload :Plan,         'mousetrap/plan'
+  autoload :Invoice,      'mousetrap/invoice'
   autoload :Resource,     'mousetrap/resource'
   autoload :Subscription, 'mousetrap/subscription'
 
